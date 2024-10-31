@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .origin {
+            font-size: 50px;
+            color: blue;
+        }
+        .white{
+            color: black;
+        }
+    </style>
+    <div class="options">
+        
+        <div class="option-element"><a class="origin" onclick="toggleColor(this)" href="#">@ punctuation</a></div>
+        <div class="option-element"><a class="origin" onclick="toggleColor(this)" href="#"># number gays</a></div>
+        <div class="option-element"><a class="origin" onclick="toggleColor(this)" href="#"># number shit like that</a></div>
+    </div>
+
+    <script>
+        function addClass(el, name) {
+            if (el) {
+                el.className += ' ' + name;
+            }
+        }
+
+        function removeClass(el, name) {
+            el.className = el.className.replace(name, '');
+        }
+
+        function toggleColor(element) {
+            // Get all option elements
+            const optionElements = document.querySelectorAll('.option-element a.white');
+            
+            // Remove 'white' class from all option elements
+
+
+            // Add 'white' class to the clicked element
+            if (!element.classList.contains('white')) {
+                optionElements.forEach((el) => {
+                    removeClass(el, 'white');
+                });
+                addClass(element, 'white');
+                console.log("do something");
+            } else {
+                console.log("it should work")
+                removeClass(element, 'white');
+            }
+
+        }
+    </script>
+</body>
+</html>
